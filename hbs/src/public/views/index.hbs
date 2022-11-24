@@ -1,0 +1,41 @@
+<h1 class="text-center m-5">
+  Backend - Desafio Plantillas - Handlebars
+</h1>
+<div class="container my-5 d-flex flex-column">
+  <form action="/api/productos" method="post" class="bg-dark p-3 rounded">
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="floatingInput"
+        placeholder="Nombre del producto"
+        name="title"
+      />
+      <label for="floatingInput">Title</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="floatingPassword"
+        placeholder="Precio del producto"
+        name="price"
+      />
+      <label for="floatingPassword">Price $</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="floatingPassword"
+        placeholder="Direccion de la foto del producto"
+        name="thumbnail"
+      />
+      <label for="floatingPassword">Thumbnail</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+  <a href="/api/productos" class="align-self-center">
+    <button class="btn btn-secondary my-5" type="button">Ir a productos</button>
+  </a>
+</div>

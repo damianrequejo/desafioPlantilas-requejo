@@ -1,0 +1,31 @@
+doctype
+html(lang='es')
+  head
+    meta(charset='utf-8')
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous")
+    title="Backend - Desafio Plantillas - Pug" 
+block products 
+h1(class="text-center my-5")="PRODUCTOS"
+div(class="container d-flex flex-column justify-content-center my-5")
+    if empty 
+        div(class="bg-info p-5 rounded")
+            h2(class="text-center text-warning")="Lista de Productos Vacia"
+    else
+        table(class="table")
+            thead 
+                tr 
+                    th(scope="col")="ID"
+                    th(scope="col")="Product"
+                    th(scope="col")="Price"
+                    th(scope="col")="Thumbnail"
+            tbody 
+                each product in products 
+                    tr 
+                        th(scope="col")= product.id
+                        th(scope="col")= product.title 
+                        th(scope="col")= product.price 
+                        th(scope="col") 
+                            img(src=product.thumbnail)
+        
+        a(href="/" class="my-5 aling-self-center")
+            button(class="btn btn-secondary" type="button")="Regresar al formulario de carga" 

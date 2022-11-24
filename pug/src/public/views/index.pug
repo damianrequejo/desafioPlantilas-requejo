@@ -1,0 +1,18 @@
+extends main 
+block index
+  body
+    h1(class="text-center my-5")="DESAFIO PUG" 
+    div(class="container my-5 d-flex flex-column")
+      form(action="./api/productos" method="post" class="bg-dark p-3 rounded")
+        div(class="form-floating mb-3")
+          input(type="text" class="form-control" id="floatingInput" placeholder="Nombre del producto" name="title")
+          label(for="floatingInput")="Title" 
+        div(class="form-floating mb-3")
+          input(type="text" class="form-control" id="floatingInput" placeholder="Precio del producto $" name="price")
+          label(for="floatingInput")="Price" 
+        div(class="form-floating mb-3")
+          input(type="text" class="form-control" id="floatingInput" placeholder="URL de la foto del producto" name="thumbnail")
+          label(for="floatingInput")="Thumbnail"
+        button(type="submit" class="btn btn-primary")="ENVIAR"
+      a(href="/api/productos" class="align-self-center")
+        button(class="btn btn-secondary my-5" type="button")="Ir a productos"

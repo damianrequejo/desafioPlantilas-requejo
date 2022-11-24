@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+    <h1 class="text-center my-5">Productos</h1>
+    <div class="container d-flex flex-column justify-content-center my-5">
+        <% if (empty) { %>
+        <div class="bg-info p-5 rounded">
+            <h2 class="text-center text-warning">
+                Lista de Productos Vacia
+            </h2>
+        </div>
+        <% } else { %>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Thumbnail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% products.forEach(product => { %>
+                    <tr>
+                        <th scope="col"><%= product.id %></th>
+                        <th scope="col"><%= product.title %></th>
+                        <th scope="col"><%= product.price %></th>
+                        <th scope="col"><img src=<%= product.thumbnail %>></th>
+    
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <% } %>
+        <a href="/" class="my-5 align-self-center">
+            <button class="btn btn-secondary" type="button">Regresar al formulario de carga</button>
+        </a>
+    </div>
+</body>
+
+</html>
